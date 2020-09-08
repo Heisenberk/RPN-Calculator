@@ -19,8 +19,7 @@ double MoteurRPN::calculeOperation(char op){
     double result;
 
     if (this->pile.size()<2){
-        cout << "PROBLEME LORS DU CALCUL : MANQUE DES ELEMENTS DANS LA PILE";
-        //exception a lancer
+        throw "Operandes manquantes";
     }
 
     val1 = this->pile.top();
@@ -45,14 +44,13 @@ double MoteurRPN::calculeOperation(char op){
         return result;
     }
     else if(op == '/'){
-        //attention division par zero
+        if (val1 == 0) throw "Division par Zero. ";
         result = val2/val1;
         this->pile.push(result);
         return result;
     }
     else {
-        // exception a lancer 
-        cout << "OPERANDE NON RECONNU";
+        throw "Operation Non Reconnue. "; 
     }
     return -1.0;
 }
