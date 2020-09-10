@@ -14,6 +14,7 @@ class SaisieRPN {
         void saisie();
         MoteurRPN getMoteurRPN();
         void afficheValues();
+        ~SaisieRPN();
 
 };
 

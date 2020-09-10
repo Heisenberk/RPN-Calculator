@@ -23,9 +23,15 @@ int main(){
 
     moteurRPN.enregistreOperande(1);
     cout << moteurRPN.calculeOperation('-') << endl;*/
-
-    SaisieRPN saisieRPN;
-    saisieRPN.saisie();
+    
+    try{
+        SaisieRPN saisieRPN;
+        saisieRPN.saisie();
+    }
+    catch(const char* msg){
+        cout << msg << endl;
+        return 0; // A ENLEVER
+    }
 
     return 0;
 }

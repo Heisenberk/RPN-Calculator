@@ -26,7 +26,6 @@ double MoteurRPN::calculeOperation(char op){
     this->pile.pop();
     val2 = this->pile.top();
     this->pile.pop();
-    cout << val1 << ' ' << val2 << ' ';
 
     if (op == '+'){
         result = val1+val2;
@@ -59,6 +58,4 @@ stack <double> MoteurRPN::getPile(){
     return this->pile;
 }
 
-MoteurRPN::~MoteurRPN(){
-    //cout << "Destructeur MoteurRPN" << endl;
-}
+MoteurRPN::~MoteurRPN(){}

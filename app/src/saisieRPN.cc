@@ -20,16 +20,16 @@ void SaisieRPN::saisie() {
  
         if (strcmp(value.c_str(), "exit")==0) arret = true;
         else if (strcmp(value.c_str(), "+")==0){
-            cout << "ADDITION" << endl;
+            cout << this->moteur.calculeOperation('+') << endl;
         }
         else if (strcmp(value.c_str(), "-")==0){
-            cout << "SOUSTRACTION" << endl;
+            cout << this->moteur.calculeOperation('-') << endl;
         }
         else if (strcmp(value.c_str(), "*")==0){
-            cout << "MULTIPLICATION" << endl;
+            cout << this->moteur.calculeOperation('*') << endl;
         }
         else if (strcmp(value.c_str(), "/")==0){
-            cout << "DIVISION" << endl;
+            cout << this->moteur.calculeOperation('*') << endl;
         }
         else if (!isdigit(value[0])){
             cout << "Dernier element non compris par l'application. " << endl;
@@ -37,9 +37,9 @@ void SaisieRPN::saisie() {
         }
         else {
             convert = atof(value.c_str());
-            cout << "Nombre : " << convert << endl;
+            this->moteur.enregistreOperande(convert);
         }
     }
 }
 
-
+SaisieRPN::~SaisieRPN(){}
